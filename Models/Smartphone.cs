@@ -6,9 +6,9 @@ namespace DesafioPOO.Models
     {
         public string Numero { get; set; }
         // Implementa as propriedades faltantes de acordo com o diagrama
-        public string Modelo { get; set; }
-        public string IMEI { get; set; }
-        public int Memoria { get; set; }
+        private string Modelo { get; set; }
+        private string IMEI { get; set; }
+        private int Memoria { get; set; }
 
         public Smartphone(string numero, string modelo, string imei, int memoria)
         {
@@ -19,12 +19,12 @@ namespace DesafioPOO.Models
             Memoria = memoria;
         }
 
-        public void Ligar()
+        public static void Ligar()
         {
             Console.WriteLine("Ligando...");
         }
 
-        public void ReceberLigacao()
+        public static void ReceberLigacao()
         {
             Console.WriteLine("Recebendo ligação...");
         }
@@ -34,7 +34,7 @@ namespace DesafioPOO.Models
             Console.WriteLine($"App {nomeApp} instalado com sucesso");
         }
 
-        private string ValidarNumero(string numero)
+        private static string ValidarNumero(string numero)
         {
             string pattern = @"^[0-9]+$";
             if (!Regex.IsMatch(numero, pattern))
@@ -44,7 +44,7 @@ namespace DesafioPOO.Models
             return numero;
         }
 
-        private string ValidarIMEI(string imei)
+        private static string ValidarIMEI(string imei)
         {
             string pattern = @"^[0-9]{15,17}$";
             if (!Regex.IsMatch(imei, pattern))
