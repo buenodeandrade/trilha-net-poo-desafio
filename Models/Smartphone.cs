@@ -34,7 +34,7 @@ namespace DesafioPOO.Models
             Console.WriteLine($"App {nomeApp} instalado com sucesso");
         }
 
-  private string ValidarNumero(string numero)
+        private string ValidarNumero(string numero)
         {
             string pattern = @"^[0-9]+$";
             if (!Regex.IsMatch(numero, pattern))
